@@ -1,4 +1,5 @@
 #include<iostream>
+#include <numeric>
 using namespace std;
 // https://atcoder.jp/contests/abc143/tasks/abc143_b
 // 問題文
@@ -16,7 +17,12 @@ int main() {
         cin >> d[i];
     }
 
+    int sum = 0;
     for (int i = 0; i < N; i++) {
-        cout << d[i] << endl;
+        for (int j = i + 1; j < N; j++) {
+            sum += d[i] * d[j];
+        }
     }
+
+    cout << sum << endl;
 }
